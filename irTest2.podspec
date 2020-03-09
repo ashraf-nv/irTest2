@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'irTest2'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of irTest2.'
+  s.summary          = 'this is my second testing cocoapods lib for testing my lib'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+this is my second testing cocoapods lib for testing my lib so that we can create lib for users
                        DESC
 
   s.homepage         = 'https://github.com/ashraf-nv/irTest2'
@@ -27,16 +27,13 @@ TODO: Add long description of the pod here.
   s.author           = { 'ashraf-nv' => 'ashraf@notifyvisitors.com' }
   s.source           = { :git => 'https://github.com/ashraf-nv/irTest2.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
-  s.ios.deployment_target = '8.0'
-
-  s.source_files = 'irTest2/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'irTest2' => ['irTest2/Assets/*.png']
-  # }
+  s.platform = :ios
+  s.source_files = 'irTest2/Classes/**/*.h'
+  s.resources = 'irTest2/Assets/**/*'
+  s.resource = 'irTest2/Classes/IR_UserResources.plist'
+  s.frameworks = 'Foundation', 'UIKit', 'Security', 'Social', 'MessageUI'
+  s.vendored_library = 'irTest2/Classes/libinvitereferrals_4_3_1.a'
+  s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-lObjC' }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
